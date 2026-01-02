@@ -1,0 +1,21 @@
+[project]
+name = "todo-phase1-cli"
+version = "0.1.0"
+description = "Todo In-Memory Python Console App - Phase I"
+authors = [
+    {name = "Mujahid Shaikh", email = "smujahid995@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/mujahidshaikh18"
+Repository = "https://github.com/mujahidshaikh18/Evolution-of-Todo"
+
+[tool.setuptools]
+py-modules = []

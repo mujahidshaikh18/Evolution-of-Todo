@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cmd /c \"ren \"\"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\\\\.claude\\\\skills\\\\planning-agent-skill.md\"\" \"\"planning-agent.md\"\"\")",
+      "Bash(cat \"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\\\\.claude\\\\skills\\\\specify-agent.md\")",
+      "Bash(cat \"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\\\\.claude\\\\skills\\\\planning-agent.md\")",
+      "Bash(cat \"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\\\\.claude\\\\skills\\\\task-breakdown-agent.md\")",
+      "Bash(cat \"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\\\\.claude\\\\skills\\\\implementation-agent.md\")",
+      "Bash(cat \"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\\\\.claude\\\\skills\\\\fullstack-web-agent.md\")"
+    ]
+  }
+}
