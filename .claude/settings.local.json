@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cmd /c \"ren \"\"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\\\\.claude\\\\skills\\\\planning-agent-skill.md\"\" \"\"planning-agent.md\"\"\")",
+      "Bash(cat \"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\\\\.claude\\\\skills\\\\specify-agent.md\")",
+      "Bash(cat \"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\\\\.claude\\\\skills\\\\planning-agent.md\")",
+      "Bash(cat \"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\\\\.claude\\\\skills\\\\task-breakdown-agent.md\")",
+      "Bash(cat \"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\\\\.claude\\\\skills\\\\implementation-agent.md\")",
+      "Bash(cat \"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\\\\.claude\\\\skills\\\\fullstack-web-agent.md\")",
+      "Bash(.specify/scripts/powershell/check-prerequisites.ps1 -Json)",
+      "Bash(powershell -ExecutionPolicy Bypass -File \".specify/scripts/powershell/check-prerequisites.ps1\" -Json)",
+      "Bash(dir \"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\\\\todo-phase2\\\\backend\\\\routes\")",
+      "Bash(dir)",
+      "Bash(timeout /t 5 /nobreak)",
+      "Bash(curl -s -o nul -w \"%{http_code}\" \"http://localhost:8000/health\")",
+      "Bash(dir \"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\" /AD)",
+      "Bash(dir todo-phase2)"
+    ]
+  }
+}
