@@ -1,7 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Minimal configuration for Next.js 16
-  // Path aliases are configured in tsconfig.json and should work with Turbopack
+  reactStrictMode: true,
+
+  // Required for React 19 + modern caching behavior
+  reactCompiler: true,
+
+  // Vercel + Next 16 defaults, explicitly declared
+  output: 'standalone',
+
+  // Better error surfacing in production
+  logging: {
+    fetches: {
+      fullUrl: true
+    }
+  }
 }
 
 module.exports = nextConfig
