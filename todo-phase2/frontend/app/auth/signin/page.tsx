@@ -16,7 +16,8 @@ export default function SigninPage() {
 
     try {
       // Call the backend auth API
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
+      const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://evolution-of-todo-one.vercel.app';
+      const response = await fetch(`${API_BASE_URL}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,16 +35,29 @@ export default function SigninPage() {
 
       const tokenData = await response.json();
 
-      // We need to get user data separately since login only returns token
-      // For now, we'll construct user data from the email
-      const userData = {
-        id: tokenData.access_token.split('.')[1]?.substring(0, 10) || 'user-' + Date.now(), // Simplified ID extraction
-        email,
-        name: email.split('@')[0]
-      };
+      // Get proper user data using the token
+      const signInApiBaseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://evolution-of-todo-one.vercel.app';
+      const userResponse = await fetch(`${signInApiBaseUrl}/auth/me`, {
+        headers: {
+          'Authorization': `Bearer ${tokenData.access_token}`,
+          'Content-Type': 'application/json'
+        }
+      });
+
+      let userDetail = null;
+      if (userResponse.ok) {
+        userDetail = await userResponse.json();
+      } else {
+        // Fallback to constructing user data if /auth/me is not available
+        userDetail = {
+          id: tokenData.access_token.split('.')[1]?.substring(0, 10) || 'user-' + Date.now(), // Simplified ID extraction
+          email,
+          name: email.split('@')[0]
+        };
+      }
 
       // Store the token and user data
-      authService.setSession(tokenData.access_token, userData);
+      authService.setSession(tokenData.access_token, userDetail);
 
       // Redirect to dashboard
       router.push('/dashboard');

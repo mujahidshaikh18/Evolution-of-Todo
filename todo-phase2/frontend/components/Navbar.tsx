@@ -49,7 +49,7 @@ const Navbar: React.FC<NavbarProps> = ({ onLogout }) => {
                 </div>
                 <button
                   onClick={handleLogout}
-                  className="neon-button py-2 px-4 rounded font-mono"
+                  className="border border-green-500 bg-black text-green-400 shadow-[0_0_5px_#00ff41,_0_0_10px_#00ff41] transition-all duration-300 hover:bg-black/100 hover:shadow-[0_0_10px_#00ff41,_0_0_20px_#00ff41] py-2 px-4 rounded font-mono"
                 >
                   <svg className="w-4 h-4 inline mr-1" fill="none" stroke="#00ff41" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
@@ -61,13 +61,13 @@ const Navbar: React.FC<NavbarProps> = ({ onLogout }) => {
               <div className="flex space-x-2">
                 <Link
                   href="/auth/signin"
-                  className="neon-button py-2 px-4 rounded font-mono"
+                  className="border border-green-500 bg-black text-green-400 shadow-[0_0_5px_#00ff41,_0_0_10px_#00ff41] transition-all duration-300 hover:bg-black/100 hover:shadow-[0_0_10px_#00ff41,_0_0_20px_#00ff41] py-2 px-4 rounded font-mono"
                 >
                   SIGN IN
                 </Link>
                 <Link
                   href="/auth/signup"
-                  className="neon-button py-2 px-4 rounded font-mono"
+                  className="border border-green-500 bg-black text-green-400 shadow-[0_0_5px_#00ff41,_0_0_10px_#00ff41] transition-all duration-300 hover:bg-black/100 hover:shadow-[0_0_10px_#00ff41,_0_0_20px_#00ff41] py-2 px-4 rounded font-mono"
                 >
                   SIGN UP
                 </Link>

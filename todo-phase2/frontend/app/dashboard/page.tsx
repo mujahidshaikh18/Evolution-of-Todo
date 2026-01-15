@@ -41,7 +41,7 @@ function TaskContent() {
         <p className="text-green-400 font-mono">Please log in to access your dashboard.</p>
         <button
           onClick={() => window.location.href = '/auth/signup'}
-          className="mt-4 neon-button py-2 px-4 rounded font-mono"
+          className="mt-4 border border-green-500 bg-black text-green-400 shadow-[0_0_5px_#00ff41,_0_0_10px_#00ff41] transition-all duration-300 hover:bg-black/100 hover:shadow-[0_0_10px_#00ff41,_0_0_20px_#00ff41] py-2 px-4 rounded font-mono"
         >
           GO TO SIGNUP
         </button>
@@ -122,7 +122,7 @@ function TaskContent() {
             </div>
             <button
               onClick={() => setShowAddModal(true)}
-              className="neon-button py-3 px-6 rounded font-mono flex items-center gap-2 hover:scale-105 transition-transform"
+              className="border border-green-500 bg-black text-green-400 shadow-[0_0_5px_#00ff41,_0_0_10px_#00ff41] transition-all duration-300 hover:bg-black/100 hover:shadow-[0_0_10px_#00ff41,_0_0_20px_#00ff41] py-3 px-6 rounded font-mono flex items-center gap-2 hover:scale-105 transition-transform"
             >
               <svg className="w-5 h-5" fill="none" stroke="#00ff41" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -145,7 +145,7 @@ function TaskContent() {
             <p className="text-green-400 mb-6 font-mono">INITIALIZE YOUR FIRST TASK</p>
             <button
               onClick={() => setShowAddModal(true)}
-              className="neon-button py-3 px-6 rounded font-mono"
+              className="border border-green-500 bg-black text-green-400 shadow-[0_0_5px_#00ff41,_0_0_10px_#00ff41] transition-all duration-300 hover:bg-black/100 hover:shadow-[0_0_10px_#00ff41,_0_0_20px_#00ff41] py-3 px-6 rounded font-mono"
             >
               CREATE_FIRST_TASK
             </button>

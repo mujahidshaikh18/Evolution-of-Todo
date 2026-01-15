@@ -38,36 +38,6 @@ body {
   font-family: 'Courier New', monospace;
 }
 
-.neon-button {
-  border: 1px solid #00ff41;
-  background-color: #000;
-  color: #00ff41;
-  box-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41;
-  transition: all 0.3s ease;
-}
-
-.neon-button:hover {
-  background-color: #001a00;
-  box-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
-  transform: translateY(-2px);
-}
-
-.neon-button:active {
-  transform: translateY(1px);
-}
-
-.neon-input {
-  border: 1px solid #00ff41;
-  background-color: #000;
-  color: #00ff41;
-  box-shadow: 0 0 5px #00ff41;
-}
-
-.neon-input:focus {
-  outline: none;
-  box-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
-}
-
 ::-webkit-scrollbar {
   width: 8px;
 }

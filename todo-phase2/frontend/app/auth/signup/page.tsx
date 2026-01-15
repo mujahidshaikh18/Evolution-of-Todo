@@ -17,7 +17,8 @@ export default function SignupPage() {
 
     try {
       // Call the backend auth API
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
+      const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://evolution-of-todo-one.vercel.app';
+      const response = await fetch(`${API_BASE_URL}/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -55,8 +56,21 @@ export default function SignupPage() {
 
       const tokenData = await loginResponse.json();
 
+      // Get proper user data using the token
+      const userResponse = await fetch(`${API_BASE_URL}/auth/me`, {
+        headers: {
+          'Authorization': `Bearer ${tokenData.access_token}`,
+          'Content-Type': 'application/json'
+        }
+      });
+
+      let userDetail = userData; // fallback to registration data
+      if (userResponse.ok) {
+        userDetail = await userResponse.json();
+      }
+
       // Store the token and user data
-      authService.setSession(tokenData.access_token, userData);
+      authService.setSession(tokenData.access_token, userDetail);
 
       // Redirect to dashboard
       router.push('/dashboard');
