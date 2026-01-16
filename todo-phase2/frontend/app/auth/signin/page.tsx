@@ -35,7 +35,7 @@ export default function SigninPage() {
 
       const tokenData = await response.json();
 
-      // Token ko decode karein asli ID nikalne ke liye
+      // Decode the token get orignal id
       const base64Url = tokenData.access_token.split('.')[1];
       const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
       const decodedToken = JSON.parse(window.atob(base64));
