@@ -15,7 +15,7 @@ app = FastAPI(
 )
 
 # Add CORS middleware
-allowed_origins_raw = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000")
+allowed_origins_raw = os.getenv("ALLOWED_ORIGINS", "https://todo-mujahidshaikh81.vercel.app")
 allowed_origins = allowed_origins_raw.split(",") if allowed_origins_raw else ["http://localhost:3000"]
 app.add_middleware(
     CORSMiddleware,
