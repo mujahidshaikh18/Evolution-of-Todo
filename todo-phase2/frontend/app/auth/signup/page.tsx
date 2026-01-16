@@ -56,8 +56,18 @@ export default function SignupPage() {
 
       const tokenData = await loginResponse.json();
 
+      const base64Url = tokenData.access_token.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const decodedToken = JSON.parse(window.atob(base64));
+
+      const userDetail = {
+        id: decodedToken.sub, // YAHAN ASLI ID HAI (Better Auth 'sub' use karta hai)
+        email: email,
+        name: email.split('@')[0]
+      };
+
       // Store the token and user data
-      authService.setSession(tokenData.access_token, userData);
+      authService.setSession(tokenData.access_token, userDetail);
 
       // Redirect to dashboard
       router.push('/dashboard');
