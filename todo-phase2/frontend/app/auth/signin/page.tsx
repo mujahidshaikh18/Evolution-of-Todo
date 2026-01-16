@@ -41,7 +41,7 @@ export default function SigninPage() {
       const decodedToken = JSON.parse(window.atob(base64));
 
       const userDetail = {
-        id: decodedToken.sub, // YAHAN ASLI ID HAI (Better Auth 'sub' use karta hai)
+        id: decodedToken.sub, 
         email: email,
         name: email.split('@')[0]
       };
