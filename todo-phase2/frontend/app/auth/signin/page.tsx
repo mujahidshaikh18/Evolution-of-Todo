@@ -35,10 +35,14 @@ export default function SigninPage() {
 
       const tokenData = await response.json();
 
-      // Construct user data from email since backend returns token only
+      // Token ko decode karein asli ID nikalne ke liye
+      const base64Url = tokenData.access_token.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const decodedToken = JSON.parse(window.atob(base64));
+
       const userDetail = {
-        id: tokenData.access_token.split('.')[1]?.substring(0, 10) || 'user-' + Date.now(), // Simplified ID extraction
-        email,
+        id: decodedToken.sub, // YAHAN ASLI ID HAI (Better Auth 'sub' use karta hai)
+        email: email,
         name: email.split('@')[0]
       };
 
