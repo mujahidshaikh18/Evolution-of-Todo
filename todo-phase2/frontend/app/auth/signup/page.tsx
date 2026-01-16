@@ -56,21 +56,8 @@ export default function SignupPage() {
 
       const tokenData = await loginResponse.json();
 
-      // Get proper user data using the token
-      const userResponse = await fetch(`${API_BASE_URL}/auth/me`, {
-        headers: {
-          'Authorization': `Bearer ${tokenData.access_token}`,
-          'Content-Type': 'application/json'
-        }
-      });
-
-      let userDetail = userData; // fallback to registration data
-      if (userResponse.ok) {
-        userDetail = await userResponse.json();
-      }
-
       // Store the token and user data
-      authService.setSession(tokenData.access_token, userDetail);
+      authService.setSession(tokenData.access_token, userData);
 
       // Redirect to dashboard
       router.push('/dashboard');
