@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.matrix-bg {
+  background-image:
+    radial-gradient(at 47% 33%, hsla(120,67%,7%,1) 0px, transparent 50%),
+    radial-gradient(at 82% 65%, hsla(120,67%,7%,1) 0px, transparent 50%),
+    radial-gradient(at 21% 25%, hsla(120,67%,7%,1) 0px, transparent 50%),
+    radial-gradient(at 82% 45%, hsla(120,67%,7%,1) 0px, transparent 50%);
+}
+
+.neon-text {
+  color: #00ff41;
+  text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41, 0 0 20px #00ff41;
+  font-family: 'Courier New', monospace;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff41;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cc33;
+}
