@@ -122,7 +122,7 @@ function TaskContent() {
             </div>
             <button
               onClick={() => setShowAddModal(true)}
-              className="border border-green-500 bg-black text-green-400 shadow-[0_0_5px_#00ff41,_0_0_10px_#00ff41]  hover:bg-black/100 hover:shadow-[0_0_10px_#00ff41,_0_0_20px_#00ff41] py-3 px-6 rounded font-mono flex items-center gap-2 hover:scale-105 transition-all duration-300 "
+              className="border border-green-500 bg-black text-green-400 shadow-[0_0_5px_#00ff41,_0_0_10px_#00ff41] transition-all duration-300  hover:bg-black/100 hover:shadow-[0_0_10px_#00ff41,_0_0_20px_#00ff41] py-3 px-6 rounded font-mono flex items-center gap-2 hover:scale-105 transition-transform"
             >
               <svg className="w-5 h-5" fill="none" stroke="#00ff41" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
