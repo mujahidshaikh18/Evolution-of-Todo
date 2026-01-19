@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { authService } from '../../../lib/auth';
-import Navbar from '../../../components/Navbar';
+import { authService } from '@/lib/auth';
+import Navbar from '@/components/Navbar';
 
 export default function SigninPage() {
   const [email, setEmail] = useState('');

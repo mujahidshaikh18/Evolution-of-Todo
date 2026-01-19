@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Task } from '../lib/types';
+import { Task } from '@/lib/types';
 import EditTaskModal from './EditTaskModal';
 
 interface TaskCardProps {

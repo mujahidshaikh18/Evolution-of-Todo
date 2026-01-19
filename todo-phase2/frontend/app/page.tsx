@@ -2,8 +2,8 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { authService } from '../lib/auth';
-import Navbar from '../components/Navbar';
+import { authService } from '@/lib/auth';
+import Navbar from '@/components/Navbar';
 
 export default function HomePage() {
   const router = useRouter();

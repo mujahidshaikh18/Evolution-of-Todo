@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Task } from '../lib/types';
+import { Task } from '@/lib/types';
 
 interface EditTaskModalProps {
   task: Task;

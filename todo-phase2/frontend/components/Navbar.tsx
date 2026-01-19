@@ -1,7 +1,7 @@
 'use client';
 
-import { authService } from '../lib/auth';
-import { User } from '../lib/types';
+import { authService } from '@/lib/auth';
+import { User } from '@/lib/types';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
