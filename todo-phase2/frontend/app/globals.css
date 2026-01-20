@@ -6,6 +6,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 0, 0, 0;
+  --neon-green: #00ff41;
+  --bg-black: #000000;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -16,28 +18,79 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--background-start-rgb));
 }
 
 .matrix-bg {
+  background-color: var(--bg-black);
+  /* 🟢 Staggered Dot Pattern (Zig-Zag) */
   background-image:
-    radial-gradient(at 47% 33%, hsla(120,67%,7%,1) 0px, transparent 50%),
-    radial-gradient(at 82% 65%, hsla(120,67%,7%,1) 0px, transparent 50%),
-    radial-gradient(at 21% 25%, hsla(120,67%,7%,1) 0px, transparent 50%),
-    radial-gradient(at 82% 45%, hsla(120,67%,7%,1) 0px, transparent 50%);
+    radial-gradient(var(--neon-green) 1.5px, transparent 0),
+    radial-gradient(var(--neon-green) 1.5px, transparent 0);
+  /* 📏 Grid Spacing and Offset */
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px; /* This creates the staggered effect */
+  position: relative;
+  min-height: 100vh;
+  /* ⬇️ Vertical Movement Animation */
+  animation: staggeredMove 0.5s linear infinite;
 }
 
+@keyframes staggeredMove {
+  0% {
+    background-position: 0 0, 20px 20px;
+  }
+  100% {
+    background-position: 0 40px, 20px 60px; /* Moves down while keeping offset */
+  }
+}
+
+/* Content container should be above the pattern */
+.content-layer {
+  position: relative;
+  z-index: 10;
+}
+
+/* Neon text styling */
 .neon-text {
   color: #00ff41;
   text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41, 0 0 20px #00ff41;
   font-family: 'Courier New', monospace;
 }
 
+/* Neon button styling */
+.neon-button {
+  border: 1px solid #00ff41;
+  background-color: #000;
+  color: #00ff41;
+  box-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41;
+  transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+  background-color: #001a00;
+  box-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
+  transform: translateY(-2px);
+}
+
+.neon-button:active {
+  transform: translateY(1px);
+}
+
+/* Neon input styling */
+.neon-input {
+  border: 1px solid #00ff41;
+  background-color: #000;
+  color: #00ff41;
+  box-shadow: 0 0 5px #00ff41;
+}
+
+.neon-input:focus {
+  outline: none;
+  box-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
+}
+
+/* Custom scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
