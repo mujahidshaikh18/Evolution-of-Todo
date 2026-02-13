@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 from contextlib import asynccontextmanager
 
-# Add the project root to the Python path to enable imports from phase3_ai_engine
+# Add the project root to the Python path
 project_root = Path(__file__).parent.parent.parent
 if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
@@ -58,13 +58,6 @@ app.include_router(routes.chat.router)  # Enable chat router
 async def health_check():
     return {"status": "healthy"}
 
-# For Vercel deployment, make the app available at the module level
-# Vercel will automatically use the 'app' variable as the ASGI application
-try:
-    # This is needed for Vercel Python runtime
+if __name__ == "__main__":
     import uvicorn
-    if __name__ == "__main__":
-        uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
-except ImportError:
-    # When deployed to Vercel, uvicorn might not be available
-    pass
+    uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
