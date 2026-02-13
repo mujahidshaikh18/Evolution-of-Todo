@@ -6,15 +6,9 @@ from pathlib import Path
 from contextlib import asynccontextmanager
 
 # Add the project root to the Python path
-current_file = Path(__file__).resolve()
-backend_dir = current_file.parent
-
-project_root = backend_dir.parent
-
-if str(project_root) not in sys.path:
-    sys.path.insert(0, str(project_root))
-if str(backend_dir) not in sys.path:
-    sys.path.insert(0, str(backend_dir))
+app_root = Path(__file__).parent.parent.absolute()
+if str(app_root) not in sys.path:
+    sys.path.insert(0, str(app_root))
 
 from phase3_ai_engine.services.chat_service import ChatService
 
