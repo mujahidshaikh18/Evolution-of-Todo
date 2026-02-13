@@ -1,36 +1,21 @@
-<<<<<<< HEAD
-fastapi
-uvicorn[standard]
-sqlmodel
-pydantic-settings
-asyncpg
-psycopg2-binary
-python-jose[cryptography]
-passlib[bcrypt]
-python-multipart
-python-dotenv
-alembic
-mcp
-cohere
-openai
-
-# Testing dependencies
-pytest
-requests
-httpx
-=======
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
 sqlmodel==0.0.16
+pydantic-settings
 pydantic==2.5.0
+asyncpg
+psycopg2-binary
 python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
 python-multipart==0.0.6
 python-dotenv==1.0.0
-# Database support
+alembic
+mcp
+cohere
+openai
+fuzzywuzzy
+python-Levenshtein
 aiosqlite==0.19.0
-# Testing dependencies
 pytest==7.4.3
 requests==2.31.0
 httpx==0.25.2
->>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
