@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, Suspense } from 'react';
-<<<<<<< HEAD
 import { authService } from '@/lib/auth';
 import { apiClient } from '@/lib/api-client';
 import { Task } from '@/lib/types';
@@ -9,23 +8,12 @@ import TaskList from '@/components/TaskList';
 import AddTaskModal from '@/components/AddTaskModal';
 import Navbar from '@/components/Navbar';
 import ChatContainer from '@/components/ChatContainer';
-=======
-import { authService } from '../../lib/auth';
-import { apiClient } from '../../lib/api-client';
-import { Task } from '../../lib/types';
-import TaskList from '@/components/TaskList';
-import AddTaskModal from '@/components/AddTaskModal';
-import Navbar from '@/components/Navbar';
->>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
 
 function TaskContent() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [loading, setLoading] = useState(true);
   const [showAddModal, setShowAddModal] = useState(false);
-<<<<<<< HEAD
   const [showChat, setShowChat] = useState(false);
-=======
->>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
   const [userId, setUserId] = useState<string | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
 
@@ -55,11 +43,7 @@ function TaskContent() {
         <p className="text-green-400 font-mono">Please log in to access your dashboard.</p>
         <button
           onClick={() => window.location.href = '/auth/signup'}
-<<<<<<< HEAD
           className="mt-4 border border-green-500 bg-black text-green-400 shadow-[0_0_5px_#00ff41,_0_0_10px_#00ff41] transition-all duration-300 hover:bg-black/100 hover:shadow-[0_0_10px_#00ff41,_0_0_20px_#00ff41] py-2 px-4 rounded font-mono"
-=======
-          className="mt-4 neon-button py-2 px-4 rounded font-mono"
->>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
         >
           GO TO SIGNUP
         </button>
@@ -138,7 +122,6 @@ function TaskContent() {
                 COUNT: {tasks.length} {tasks.length === 1 ? 'task' : 'tasks'} online
               </p>
             </div>
-<<<<<<< HEAD
             <div className="flex gap-4">
               <button
                 onClick={() => setShowAddModal(true)}
@@ -159,17 +142,6 @@ function TaskContent() {
                 AI_ASSISTANT
               </button>
             </div>
-=======
-            <button
-              onClick={() => setShowAddModal(true)}
-              className="neon-button py-3 px-6 rounded font-mono flex items-center gap-2 hover:scale-105 transition-transform"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="#00ff41" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-              </svg>
-              ADD_TASK
-            </button>
->>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
           </div>
         </div>
       )}
@@ -186,11 +158,7 @@ function TaskContent() {
             <p className="text-green-400 mb-6 font-mono">INITIALIZE YOUR FIRST TASK</p>
             <button
               onClick={() => setShowAddModal(true)}
-<<<<<<< HEAD
               className="border border-green-500 bg-black text-green-400 shadow-[0_0_5px_#00ff41,_0_0_10px_#00ff41] transition-all duration-300 hover:bg-black/100 hover:shadow-[0_0_10px_#00ff41,_0_0_20px_#00ff41] py-3 px-6 rounded font-mono"
-=======
-              className="neon-button py-3 px-6 rounded font-mono"
->>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
             >
               CREATE_FIRST_TASK
             </button>
@@ -211,7 +179,6 @@ function TaskContent() {
           onAddTask={handleAddTask}
         />
       )}
-<<<<<<< HEAD
 
       {showChat && (
         <ChatContainer
@@ -224,8 +191,6 @@ function TaskContent() {
           onToggleComplete={handleToggleComplete}
         />
       )}
-=======
->>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
     </>
   );
 }

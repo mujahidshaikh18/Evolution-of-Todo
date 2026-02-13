@@ -20,7 +20,6 @@ This repository documents the complete evolution of a simple todo application fr
 - **Location**: `./todo-phase2/`
 - **Documentation**: `./todo-phase2/README.md`
 
-<<<<<<< HEAD
 ### Phase III: AI-Powered Todo Chatbot with MCP Server
 - **Type**: AI-powered chatbot interface with MCP (Model Context Protocol) server
 - **Technology**: Cohere AI (command-r-plus), MCP Protocol, FastAPI, Next.js
@@ -29,8 +28,6 @@ This repository documents the complete evolution of a simple todo application fr
 - **Location**: `./phase3_ai_engine/` and `./specs/phase3/`
 - **Documentation**: `./specs/phase3/README.md`
 
-=======
->>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
 ## Repository Structure
 
 ```
@@ -58,7 +55,6 @@ Evolution-of-Todo/
 ├── history/                    # Development history and prompts
 │   ├── adr/                    # Architecture Decision Records
 │   └── prompts/                # Claude Code prompts history
-<<<<<<< HEAD
 ├── phase3_ai_engine/           # Phase III: AI-Powered Chatbot with MCP
 │   ├── main.py                 # Main MCP server entry point
 │   ├── ai_client.py            # Cohere AI integration
@@ -76,8 +72,6 @@ Evolution-of-Todo/
 │   ├── phase1/                 # Phase I specific specs
 │   ├── phase2-web/             # Phase II specific specs
 │   └── phase3/                 # Phase III specific specs
-=======
->>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
 └── ...
 ```
 
@@ -89,11 +83,8 @@ This project follows the **Spec-Kit Plus** methodology with specification-driven
 2. **Phase-Based Evolution**: Each phase builds upon the previous with clear goals
 3. **Architecture Documentation**: All decisions recorded in ADRs
 4. **Quality Assurance**: Comprehensive testing at each phase
-<<<<<<< HEAD
 5. **AI Integration**: Phase III incorporates Cohere AI with MCP protocol for natural language processing
 6. **Stateless Architecture**: Phase III implements stateless design with database persistence
-=======
->>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
 
 ## Learning Objectives
 
@@ -104,22 +95,16 @@ This evolution demonstrates:
 - Scaling from single-user to multi-user systems
 - Modern web development practices
 - API design and security considerations
-<<<<<<< HEAD
 - AI integration with natural language processing
 - MCP (Model Context Protocol) for AI tool exposure
 - Stateless architecture with database persistence
 - Proactive validation and duplicate detection
-=======
->>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
 
 ## Getting Started
 
 - For Phase I (CLI): See `./phase1/README.md`
 - For Phase II (Web App): See `./todo-phase2/README.md`
-<<<<<<< HEAD
 - For Phase III (AI Chatbot): See `./specs/phase3/README.md` and `./phase3_ai_engine/README.md`
-=======
->>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
 
 ## Technologies Used
 
@@ -134,7 +119,6 @@ This evolution demonstrates:
 - **Database**: Neon Serverless PostgreSQL
 - **Authentication**: JWT tokens
 
-<<<<<<< HEAD
 ### Phase III
 - **AI Integration**: Cohere command-r-plus via OpenAI-compatible SDK
 - **MCP Protocol**: Model Context Protocol for AI tool exposure
@@ -143,8 +127,6 @@ This evolution demonstrates:
 - **Database**: Neon PostgreSQL for persistent chat history
 - **Validation**: Proactive task validation and duplicate detection
 
-=======
->>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
 ## Contributing
 
 Each phase can be developed independently. Follow the documentation in each phase directory for setup and contribution guidelines.

@@ -14,7 +14,6 @@
       "Bash(timeout /t 5 /nobreak)",
       "Bash(curl -s -o nul -w \"%{http_code}\" \"http://localhost:8000/health\")",
       "Bash(dir \"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\" /AD)",
-<<<<<<< HEAD
       "Bash(dir todo-phase2)",
       "Bash(dir \"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\\\\todo-phase2\\\\frontend\\\\lib\")",
       "Bash(dir \"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\\\\todo-phase2\\\\frontend\\\\components\")",
@@ -23,9 +22,6 @@
       "Bash(move integration_test.py todo-phase2/)",
       "Bash(cmd /c \"move integration_test.py todo-phase2\\\\\")",
       "Bash(powershell Move-Item:*)"
-=======
-      "Bash(dir todo-phase2)"
->>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
     ]
   }
 }

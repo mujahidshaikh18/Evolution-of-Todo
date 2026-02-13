@@ -1,7 +1,6 @@
 from sqlmodel import SQLModel, Field
 from typing import Optional
 from datetime import datetime
-<<<<<<< HEAD
 import uuid
 
 class User(SQLModel, table=True):
@@ -11,8 +10,6 @@ class User(SQLModel, table=True):
     email: str = Field(index=True, unique=True)
     name: Optional[str] = None
     created_at: datetime = Field(default_factory=datetime.utcnow)
-=======
->>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
 
 class TaskBase(SQLModel):
     title: str = Field(min_length=1, max_length=200)
@@ -21,14 +18,10 @@ class TaskBase(SQLModel):
     user_id: str  # Changed from foreign_key="users.id" since we're not implementing a separate users table
 
 class Task(TaskBase, table=True):
-<<<<<<< HEAD
     __tablename__ = "task"
     __table_args__ = {'extend_existing': True}
     id: Optional[int] = Field(default=None, primary_key=True)
     user_id: str = Field(foreign_key="user.id")
-=======
-    id: Optional[int] = Field(default=None, primary_key=True)
->>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
     created_at: datetime = Field(default_factory=datetime.utcnow)
     updated_at: datetime = Field(default_factory=datetime.utcnow)
 
@@ -43,7 +36,6 @@ class TaskPublic(TaskBase):
     id: int
     user_id: str
     created_at: datetime
-<<<<<<< HEAD
     updated_at: datetime
 
 
@@ -55,6 +47,3 @@ class ChatHistory(SQLModel, table=True):
     role: str = Field(max_length=20)  # "user", "assistant", "system"
     content: str = Field(max_length=10000)
     created_at: datetime = Field(default_factory=datetime.utcnow)
-=======
-    updated_at: datetime
->>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09

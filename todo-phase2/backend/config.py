@@ -1,19 +1,13 @@
-<<<<<<< HEAD
 import sys
 import os
 from typing import Optional
 from dotenv import load_dotenv
 
 load_dotenv()
-=======
-import os
-from typing import Optional
->>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
 
 class Settings:
     """Application settings loaded from environment variables"""
 
-<<<<<<< HEAD
     DATABASE_URL: str = os.getenv("DATABASE_URL")
     if not DATABASE_URL:
         raise ValueError("ERROR: DATABASE_URL is missing! Check your .env file.")
@@ -33,15 +27,6 @@ class Settings:
     @property
     def allowed_origins_list(self) -> list:
 
-=======
-    DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///./todo.db")
-    BETTER_AUTH_SECRET: str = os.getenv("BETTER_AUTH_SECRET", "")
-    ALLOWED_ORIGINS: str = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000")
-
-    @property
-    def allowed_origins_list(self) -> list:
-        """Return allowed origins as a list"""
->>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
         return [origin.strip() for origin in self.ALLOWED_ORIGINS.split(",") if origin.strip()]
 
 # Create settings instance
