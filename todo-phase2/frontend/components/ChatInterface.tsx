@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 interface Message {
   id: string;
-  role: 'user' | 'assistant' | 'system';
+  role: 'user' | 'assistant' | 'system' | 'tool';
   content: string;
   timestamp: string;
 }
@@ -43,8 +43,8 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
   // Effect to handle task refresh when tool messages indicate success
   useEffect(() => {
     // Check the last message to see if it's a tool success message
-    const lastMessage = messages[messages.length - 1];
-    if (lastMessage && lastMessage.role === 'tool' && typeof lastMessage.content === 'object' && lastMessage.content.success) {
+    const lastMessage = messages[messages.length - 1] as any;
+    if (lastMessage && lastMessage.role === 'tool' && typeof lastMessage.content === 'object' && lastMessage.content?.success) {
       // If the tool operation was successful, trigger a refresh of tasks
       if (onTasksChanged) {
         // Add a small delay to ensure the UI updates properly
