@@ -66,3 +66,5 @@ Thumbs.db
 # Project specific
 src/__pycache__/
 *.pyc
+.vercel
+.env*.local
