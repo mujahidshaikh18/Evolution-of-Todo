@@ -205,6 +205,48 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 - `history/prompts/` — Prompt History Records
 - `history/adr/` — Architecture Decision Records
 - `.specify/` — SpecKit Plus templates and scripts
+- `phase3_ai_engine/` — Phase III AI-powered chatbot with MCP server
+  - `main.py` — Main MCP server entry point
+  - `ai_client.py` — Cohere AI integration
+  - `mcp_server.py` — MCP server foundation
+  - `services/` — Backend services for chat and validation
+  - `mcp_tools/` — MCP tool implementations
+- `specs/phase3/` — Phase III specifications, plans, and documentation
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+
+## Project Intelligence
+
+### Agents
+- @.claude/agents/architect-agent.md
+- @.claude/agents/chatbot-ux-agent.md
+- @.claude/agents/console-app-agent.md
+- @.claude/agents/constitution-agent.md
+- @.claude/agents/fullstack-web-agent.md
+- @.claude/agents/implementation-agent.md
+- @.claude/agents/mcp-expert-agent.md
+- @.claude/agents/planning-agent.md
+- @.claude/agents/specify-agent.md
+- @.claude/agents/task-breakdown-agent.md
+
+## Phase 3: AI-Powered Todo Chatbot with MCP Server
+
+### Specialized Agents for Phase 3
+- **MCP Expert Agent**: Handles Model Context Protocol integration and tool exposure
+  - Location: @.claude/agents/mcp-expert-agent.md
+  - Responsibilities: MCP tool schemas, AI integration, protocol compliance
+
+- **Architect Agent**: Ensures stateless architecture with database persistence
+  - Location: @.claude/agents/architect-agent.md
+  - Responsibilities: Stateless system design, database integration, scalability
+
+- **Chatbot UX Agent**: Implements cyberpunk-themed UI with natural language processing
+  - Location: @.claude/agents/chatbot-ux-agent.md
+  - Responsibilities: OpenAI ChatKit integration, cyberpunk UI, conversational flows
+
+### MCP Tools Available
+- `manage_todo_mcp`: Full CRUD operations for todo items via natural language
+- `sync_chat_memory`: Automated saving and retrieval of conversation history
+- `proactive_guard`: Duplicate detection and deadline conflict checking
+- `chat_handshake_mcp`: Initialize conversation context with recent history

@@ -36,6 +36,7 @@ coverage/
 *.min.css
 dist/
 build/
+.vercel/
 
 # Virtual Environment
 venv/

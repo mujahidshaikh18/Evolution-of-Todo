@@ -2,11 +2,16 @@ fastapi
 uvicorn[standard]
 sqlmodel
 pydantic-settings
+asyncpg
 psycopg2-binary
 python-jose[cryptography]
 passlib[bcrypt]
 python-multipart
 python-dotenv
+alembic
+mcp
+cohere
+openai
 
 # Testing dependencies
 pytest

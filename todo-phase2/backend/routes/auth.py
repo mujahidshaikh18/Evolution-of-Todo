@@ -1,14 +1,16 @@
-from fastapi import APIRouter, HTTPException, status
+from unittest import result
+from fastapi import APIRouter, HTTPException, status, Depends
 from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime, timedelta
-from jose import jwt  
+from jose import jwt, JWTError
 import os
 import uuid
-from sqlmodel import Session, select
+from sqlmodel import select
+from sqlmodel.ext.asyncio.session import AsyncSession
+from fastapi.security import OAuth2PasswordBearer
 
-# Absolute imports (aapke project structure ke hisaab se)
-from db import engine
+from db import get_session
 from models import User
 
 router = APIRouter()
@@ -51,10 +53,11 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
 # --- Routes ---
 
 @router.post("/auth/register", response_model=UserResponse)
-def register(user: UserCreate):
-    with Session(engine) as session:
+async def register(user: UserCreate, session: AsyncSession = Depends(get_session)):
         # 1. Check if user exists
-        existing_user = session.exec(select(User).where(User.email == user.email)).first()
+        statement = select(User).where(User.email == user.email)
+        result = await session.exec(statement) 
+        existing_user = result.first()
         if existing_user:
             raise HTTPException(status_code=400, detail="Email already registered")
         
@@ -67,15 +70,17 @@ def register(user: UserCreate):
         )
         
         session.add(db_user)
-        session.commit()
-        session.refresh(db_user)
+        await session.commit()
+        await session.refresh(db_user)
         return db_user
 
 @router.post("/auth/login", response_model=Token)
-def login(user: UserLogin):
-    with Session(engine) as session:
+async def login(user: UserLogin, session: AsyncSession = Depends(get_session)):
+
         # 1. Find user by email
-        db_user = session.exec(select(User).where(User.email == user.email)).first()
+        statement = select(User).where(User.email == user.email)
+        result = await session.exec(statement) # await lagaya
+        db_user = result.first()
         if not db_user:
             raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED, 
@@ -92,6 +97,30 @@ def login(user: UserLogin):
         return {"access_token": access_token, "token_type": "bearer"}
 
 @router.post("/auth/logout")
-def logout():
+async def logout():
     # Since JWTs are stateless, logout can be handled on the client side by deleting the token.
     return {"message": "Logged out successfully"}
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login")
+
+async def get_current_user(token: str = Depends(oauth2_scheme), session: AsyncSession = Depends(get_session)):
+    credentials_exception = HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Could not validate credentials",
+        headers={"WWW-Authenticate": "Bearer"},
+    )
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        user_id: str = payload.get("sub")
+        if user_id is None:
+            raise credentials_exception
+    except JWTError:
+        raise credentials_exception
+        
+    statement = select(User).where(User.id == user_id)
+    result = await session.exec(statement)
+    user = result.first()
+    
+    if user is None:
+        raise credentials_exception
+    return user

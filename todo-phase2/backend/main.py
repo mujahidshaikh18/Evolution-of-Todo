@@ -1,24 +1,44 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import os
+import sys
+from pathlib import Path
+from contextlib import asynccontextmanager
+
+# Add the project root to the Python path to enable imports from phase3_ai_engine
+project_root = Path(__file__).parent.parent.parent
+if str(project_root) not in sys.path:
+    sys.path.insert(0, str(project_root))
+
 from config import settings
 
 # Import with absolute paths to avoid relative import issues
 import db
 import routes.tasks
 import routes.auth
+import routes.chat  # Enable chat routes
+
+from contextlib import asynccontextmanager
+from fastapi import FastAPI
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    await db.create_db_and_tables()
+    yield
 
 # Create FastAPI app
 app = FastAPI(
     title="Todo API",
     description="RESTful API for Todo Full-Stack Web Application",
-    version="1.0.0"
+    version="1.0.0",
+    lifespan=lifespan
 )
 
 # Add CORS middleware
 origins = [
     "https://todo-mujahidshaikh18.vercel.app",
     "http://localhost:3000",
+    "http://127.0.0.1:3000",
 ]
 
 app.add_middleware(
@@ -32,10 +52,7 @@ app.add_middleware(
 # Include routers
 app.include_router(routes.auth.router)
 app.include_router(routes.tasks.router, prefix="/api/{user_id}")
-
-@app.on_event("startup")
-def startup_event():
-    db.create_db_and_tables()
+app.include_router(routes.chat.router)  # Enable chat router
 
 @app.get("/health")
 async def health_check():

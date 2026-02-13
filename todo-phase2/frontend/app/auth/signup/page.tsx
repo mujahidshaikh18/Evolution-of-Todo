@@ -108,6 +108,7 @@ export default function SignupPage() {
                   id="name"
                   name="name"
                   type="text"
+                  autoComplete="name"
                   required
                   className="relative block w-full appearance-none rounded border border-green-500 px-4 py-3 bg-black text-green-400 placeholder-green-600 focus:z-10 focus:border-green-400 focus:outline-none focus:ring-green-500 sm:text-sm transition-colors font-mono"
                   placeholder="JOHN DOE"

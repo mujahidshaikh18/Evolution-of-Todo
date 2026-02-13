@@ -16,7 +16,12 @@
       "Bash(dir \"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\" /AD)",
       "Bash(dir todo-phase2)",
       "Bash(dir \"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\\\\todo-phase2\\\\frontend\\\\lib\")",
-      "Bash(dir \"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\\\\todo-phase2\\\\frontend\\\\components\")"
+      "Bash(dir \"W:\\\\Hackathon Cli\\\\Evolution-of-Todo\\\\todo-phase2\\\\frontend\\\\components\")",
+      "Bash(python -m pytest:*)",
+      "Bash(dir:*)",
+      "Bash(move integration_test.py todo-phase2/)",
+      "Bash(cmd /c \"move integration_test.py todo-phase2\\\\\")",
+      "Bash(powershell Move-Item:*)"
     ]
   }
 }
