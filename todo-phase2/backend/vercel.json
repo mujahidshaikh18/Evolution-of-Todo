@@ -2,17 +2,17 @@
   "version": 2,
   "builds": [
     {
-      "src": "backend/main.py",
+      "src": "todo-phase2/backend/main.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "backend/main.py"
+      "dest": "todo-phase2/backend/main.py"
     }
   ],
   "env": {
-    "PYTHONPATH": "backend"
+    "PYTHONPATH": "todo-phase2/backend"
   }
 }
