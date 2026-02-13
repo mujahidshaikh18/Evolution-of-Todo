@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect, Suspense } from 'react';
-import { authService } from '@/lib/auth';
-import { apiClient } from '@/lib/api-client';
-import { Task } from '@/lib/types';
+import { authService } from '../../lib/auth';
+import { apiClient } from '../../lib/api-client';
+import { Task } from '../../lib/types';
 import TaskList from '@/components/TaskList';
 import AddTaskModal from '@/components/AddTaskModal';
 import Navbar from '@/components/Navbar';
