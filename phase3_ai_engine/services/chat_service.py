@@ -66,8 +66,8 @@ class ChatService:
             .order_by(ChatHistory.created_at.desc())
             .limit(limit)
         )
-        result = await self.session.execute(statement)
-        messages = result.scalars().all()
+        result = await self.session.exec(statement)
+        messages = result.all()
 
         return [{"role": m.role, "content": m.content} for m in reversed(messages)]
 
