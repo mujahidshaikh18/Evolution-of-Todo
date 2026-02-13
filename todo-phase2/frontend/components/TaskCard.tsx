@@ -79,7 +79,11 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onUpdate, onToggleComplete, o
           <button
             onClick={() => setShowEditModal(true)}
             disabled={isLoading}
+<<<<<<< HEAD
             className="border border-green-500 bg-black text-green-400 shadow-[0_0_5px_#00ff41,_0_0_10px_#00ff41] transition-all duration-300 hover:bg-black/100 hover:shadow-[0_0_10px_#00ff41,_0_0_20px_#00ff41] px-3 py-1.5 text-sm font-mono transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+=======
+            className="neon-button px-3 py-1.5 text-sm font-mono transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+>>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
             aria-label={`Edit task ${task.title}`}
           >
             <svg className="w-4 h-4 mr-1 inline" fill="none" stroke="#00ff41" viewBox="0 0 24 24">
@@ -90,7 +94,11 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onUpdate, onToggleComplete, o
           <button
             onClick={handleDelete}
             disabled={isLoading}
+<<<<<<< HEAD
             className="border border-green-500 bg-black text-green-400 shadow-[0_0_5px_#00ff41,_0_0_10px_#00ff41] transition-all duration-300 hover:bg-black/100 hover:shadow-[0_0_10px_#00ff41,_0_0_20px_#00ff41] px-3 py-1.5 text-sm font-mono transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+=======
+            className="neon-button px-3 py-1.5 text-sm font-mono transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+>>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
             aria-label={`Delete task ${task.title}`}
           >
             <svg className="w-4 h-4 mr-1 inline" fill="none" stroke="#00ff41" viewBox="0 0 24 24">

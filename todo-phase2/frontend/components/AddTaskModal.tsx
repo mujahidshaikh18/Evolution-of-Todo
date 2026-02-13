@@ -38,6 +38,13 @@ const AddTaskModal: React.FC<AddTaskModalProps> = ({ onClose, onAddTask }) => {
     setIsLoading(true);
     try {
       await onAddTask(title, description || undefined);
+<<<<<<< HEAD
+=======
+      // Reset form on successful submission
+      setTitle('');
+      setDescription('');
+      setErrors({});
+>>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
     } finally {
       setIsLoading(false);
     }
@@ -63,7 +70,11 @@ const AddTaskModal: React.FC<AddTaskModalProps> = ({ onClose, onAddTask }) => {
           </div>
           <div className="mt-2">
             <h3 className="text-lg font-medium neon-text" id="modal-title">
+<<<<<<< HEAD
               ADD_TASK
+=======
+              ADD_NEW_TASK
+>>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
             </h3>
             <form onSubmit={handleSubmit} className="mt-4 space-y-4 font-mono">
               <div>
@@ -139,7 +150,11 @@ const AddTaskModal: React.FC<AddTaskModalProps> = ({ onClose, onAddTask }) => {
                 <button
                   type="submit"
                   disabled={isLoading}
+<<<<<<< HEAD
                   className="inline-flex justify-center rounded border border-green-500 bg-black px-4 py-2 text-sm font-mono text-green-400 shadow-[0_0_5px_#00ff41,_0_0_10px_#00ff41] transition-all duration-300 hover:bg-black/100 hover:shadow-[0_0_10px_#00ff41,_0_0_20px_#00ff41] focus:outline-none focus:ring-1 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed"
+=======
+                  className="inline-flex justify-center rounded border border-transparent bg-black px-4 py-2 text-sm font-mono text-green-400 shadow-sm neon-button hover:bg-gray-800 focus:outline-none focus:ring-1 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed"
+>>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
                 >
                   {isLoading ? (
                     <span className="flex items-center">
@@ -147,10 +162,17 @@ const AddTaskModal: React.FC<AddTaskModalProps> = ({ onClose, onAddTask }) => {
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="#00ff41" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="#00ff41" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
+<<<<<<< HEAD
                       CREATING...
                     </span>
                   ) : (
                     'CREATE_TASK'
+=======
+                      ADDING...
+                    </span>
+                  ) : (
+                    'ADD_TASK'
+>>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
                   )}
                 </button>
               </div>

@@ -205,6 +205,7 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 - `history/prompts/` — Prompt History Records
 - `history/adr/` — Architecture Decision Records
 - `.specify/` — SpecKit Plus templates and scripts
+<<<<<<< HEAD
 - `phase3_ai_engine/` — Phase III AI-powered chatbot with MCP server
   - `main.py` — Main MCP server entry point
   - `ai_client.py` — Cohere AI integration
@@ -250,3 +251,8 @@ See `.specify/memory/constitution.md` for code quality, testing, performance, se
 - `sync_chat_memory`: Automated saving and retrieval of conversation history
 - `proactive_guard`: Duplicate detection and deadline conflict checking
 - `chat_handshake_mcp`: Initialize conversation context with recent history
+=======
+
+## Code Standards
+See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+>>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09

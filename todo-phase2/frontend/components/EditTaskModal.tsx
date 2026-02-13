@@ -148,7 +148,11 @@ const EditTaskModal: React.FC<EditTaskModalProps> = ({ task, onClose, onSave }) 
                 <button
                   type="submit"
                   disabled={isLoading}
+<<<<<<< HEAD
                   className="inline-flex justify-center rounded border border-green-500 bg-black px-4 py-2 text-sm font-mono text-green-400 shadow-[0_0_5px_#00ff41,_0_0_10px_#00ff41] transition-all duration-300 hover:bg-black/100 hover:shadow-[0_0_10px_#00ff41,_0_0_20px_#00ff41] focus:outline-none focus:ring-1 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed"
+=======
+                  className="inline-flex justify-center rounded border border-transparent bg-black px-4 py-2 text-sm font-mono text-green-400 shadow-sm neon-button hover:bg-gray-800 focus:outline-none focus:ring-1 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed"
+>>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
                 >
                   {isLoading ? (
                     <span className="flex items-center">

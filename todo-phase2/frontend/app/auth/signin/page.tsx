@@ -16,8 +16,12 @@ export default function SigninPage() {
 
     try {
       // Call the backend auth API
+<<<<<<< HEAD
       const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000';
       const response = await fetch(`${API_BASE_URL}/auth/login`, {
+=======
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
+>>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,6 +39,7 @@ export default function SigninPage() {
 
       const tokenData = await response.json();
 
+<<<<<<< HEAD
       // Decode the token get orignal id
       const base64Url = tokenData.access_token.split('.')[1];
       const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -43,11 +48,22 @@ export default function SigninPage() {
       const userDetail = {
         id: decodedToken.sub, 
         email: email,
+=======
+      // We need to get user data separately since login only returns token
+      // For now, we'll construct user data from the email
+      const userData = {
+        id: tokenData.access_token.split('.')[1]?.substring(0, 10) || 'user-' + Date.now(), // Simplified ID extraction
+        email,
+>>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
         name: email.split('@')[0]
       };
 
       // Store the token and user data
+<<<<<<< HEAD
       authService.setSession(tokenData.access_token, userDetail);
+=======
+      authService.setSession(tokenData.access_token, userData);
+>>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
 
       // Redirect to dashboard
       router.push('/dashboard');
@@ -150,4 +166,8 @@ export default function SigninPage() {
       </div>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09

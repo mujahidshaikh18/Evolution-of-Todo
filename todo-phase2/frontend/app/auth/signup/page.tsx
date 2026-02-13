@@ -17,8 +17,12 @@ export default function SignupPage() {
 
     try {
       // Call the backend auth API
+<<<<<<< HEAD
       const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000';
       const response = await fetch(`${API_BASE_URL}/auth/register`, {
+=======
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
+>>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -56,6 +60,7 @@ export default function SignupPage() {
 
       const tokenData = await loginResponse.json();
 
+<<<<<<< HEAD
       const base64Url = tokenData.access_token.split('.')[1];
       const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
       const decodedToken = JSON.parse(window.atob(base64));
@@ -68,6 +73,10 @@ export default function SignupPage() {
 
       // Store the token and user data
       authService.setSession(tokenData.access_token, userDetail);
+=======
+      // Store the token and user data
+      authService.setSession(tokenData.access_token, userData);
+>>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
 
       // Redirect to dashboard
       router.push('/dashboard');
@@ -108,7 +117,10 @@ export default function SignupPage() {
                   id="name"
                   name="name"
                   type="text"
+<<<<<<< HEAD
                   autoComplete="name"
+=======
+>>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
                   required
                   className="relative block w-full appearance-none rounded border border-green-500 px-4 py-3 bg-black text-green-400 placeholder-green-600 focus:z-10 focus:border-green-400 focus:outline-none focus:ring-green-500 sm:text-sm transition-colors font-mono"
                   placeholder="JOHN DOE"
@@ -187,4 +199,8 @@ export default function SignupPage() {
       </div>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> be27deab3d3f566b1231b8e6365d105beb813b09
