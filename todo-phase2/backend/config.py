@@ -8,10 +8,10 @@ load_dotenv()
 class Settings:
     """Application settings loaded from environment variables"""
 
-    DATABASE_URL: str = os.getenv("DATABASE_URL")
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "")
     if not DATABASE_URL:
         raise ValueError("ERROR: DATABASE_URL is missing! Check your .env file.")
-    BETTER_AUTH_SECRET: str = os.getenv("BETTER_AUTH_SECRET")
+    BETTER_AUTH_SECRET: str = os.getenv("BETTER_AUTH_SECRET", "")
     if not BETTER_AUTH_SECRET:
         print("WARNING: BETTER_AUTH_SECRET is not set!")
     ALLOWED_ORIGINS: str = os.getenv(
@@ -19,7 +19,7 @@ class Settings:
         "https://todo-mujahidshaikh81.vercel.app,http://localhost:3000,http://127.0.0.1:3001")
 
     # Cohere Configuration
-    COHERE_API_KEY: str = os.getenv("COHERE_API_KEY")
+    COHERE_API_KEY: str = os.getenv("COHERE_API_KEY", "")
     if not COHERE_API_KEY:
         print("WARNING: COHERE_API_KEY is not set!")
     COHERE_MODEL: str = os.getenv("COHERE_MODEL", "command-r-8-2024")
