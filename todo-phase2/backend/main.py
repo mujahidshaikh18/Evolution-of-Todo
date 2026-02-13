@@ -6,7 +6,7 @@ from pathlib import Path
 from contextlib import asynccontextmanager
 
 # Add the project root to the Python path
-file_path = Path(__file__).resolve().parent / "phase3_ai_engine"
+file_path = Path(__file__).resolve().parent.parent / "phase3_ai_engine"
 sys.path.append(str(file_path))
 
 from phase3_ai_engine.services.chat_service import ChatService
